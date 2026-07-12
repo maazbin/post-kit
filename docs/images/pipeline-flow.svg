@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="120" rx="12" fill="url(#bg)"/>
+  
+  <!-- Step 1: Research -->
+  <rect x="20" y="35" width="110" height="50" rx="25" fill="#3b82f6" opacity="0.9"/>
+  <text x="75" y="65" font-family="system-ui,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Research</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M135 60 L155 60" stroke="#4b5563" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Write -->
+  <rect x="160" y="35" width="110" height="50" rx="25" fill="#10b981" opacity="0.9"/>
+  <text x="215" y="65" font-family="system-ui,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Write</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M275 60 L295 60" stroke="#4b5563" stroke-width="2" fill="none"/>
+  
+  <!-- Step 3: Voice Pass -->
+  <rect x="300" y="35" width="110" height="50" rx="25" fill="#8b5cf6" opacity="0.9"/>
+  <text x="355" y="65" font-family="system-ui,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Voice Pass</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M415 60 L435 60" stroke="#4b5563" stroke-width="2" fill="none"/>
+  
+  <!-- Step 4: Anti-AI -->
+  <rect x="440" y="35" width="110" height="50" rx="25" fill="#f59e0b" opacity="0.9"/>
+  <text x="495" y="65" font-family="system-ui,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Anti-AI</text>
+  
+  <!-- Arrow 4 -->
+  <path d="M555 60 L575 60" stroke="#4b5563" stroke-width="2" fill="none"/>
+  
+  <!-- Step 5: Quality Gate -->
+  <rect x="580" y="35" width="120" height="50" rx="25" fill="#ef4444" opacity="0.9"/>
+  <text x="640" y="65" font-family="system-ui,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Quality Gate</text>
+  
+  <!-- Arrow 5 -->
+  <path d="M705 60 L725 60" stroke="#4b5563" stroke-width="2" fill="none"/>
+  
+  <!-- Step 6: Publish -->
+  <rect x="730" y="35" width="110" height="50" rx="25" fill="#06b6d4" opacity="0.9"/>
+  <text x="785" y="65" font-family="system-ui,sans-serif" font-size="13" fill="white" text-anchor="middle" font-weight="bold">Publish</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563"/>
+    </marker>
+  </defs>
+</svg>
