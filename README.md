@@ -82,23 +82,42 @@ The anti-AI pass runs on **every** post. It catches 50+ banned words, AI sentenc
 <details>
 <summary><b>Kiro</b> (recommended)</summary>
 
-Go to Powers panel → search "post-kit" → click Install
+1. Open Kiro → Powers panel → **Add Custom Power**
+2. Select **Import power from GitHub**
+3. Paste: `https://github.com/Huzaifa-ali/post-kit`
+4. Click **Install**
+
+The power activates automatically when you mention content-related keywords.
 
 </details>
 
 <details>
 <summary><b>Claude Code</b></summary>
 
+Clone the repo and let Claude Code read the `AGENTS.md` file:
+
+```bash
+git clone https://github.com/Huzaifa-ali/post-kit.git
 ```
-claude plugin install github:Huzaifa-ali/post-kit
-```
+
+Open the folder in Claude Code. It auto-detects `AGENTS.md` and follows the pipeline instructions. No additional config needed — just start a conversation.
 
 </details>
 
 <details>
 <summary><b>Cursor</b></summary>
 
-Settings → Rules/Skills → Add from GitHub → paste the repo URL
+Cursor reads `AGENTS.md` automatically from the project root:
+
+```bash
+git clone https://github.com/Huzaifa-ali/post-kit.git
+```
+
+Open the folder in Cursor. The agent picks up the instructions from `AGENTS.md`. Alternatively, import as a remote rule:
+
+1. Open **Customize** in the sidebar → **Rules** → **Add Rule**
+2. Select **Remote Rule (GitHub)**
+3. Paste: `https://github.com/Huzaifa-ali/post-kit`
 
 </details>
 
@@ -106,10 +125,12 @@ Settings → Rules/Skills → Add from GitHub → paste the repo URL
 <summary><b>Any other AI tool</b></summary>
 
 ```bash
-git clone https://github.com/Huzaifa-ali/post-kit
+git clone https://github.com/Huzaifa-ali/post-kit.git
 ```
 
-Open the folder in your tool. The AI reads the markdown files automatically.
+Open the folder in your AI tool. Any tool that reads markdown instruction files (Windsurf, Copilot, Cline, etc.) will pick up the pipeline from `AGENTS.md` automatically.
+
+</details>
 
 </details>
 
