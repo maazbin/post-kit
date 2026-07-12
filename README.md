@@ -19,21 +19,23 @@
 
 ## What Comes Out
 
-I said _"write a post about RAG chunking strategies"_ — here's what the pipeline produced in 90 seconds:
+I said _"write a post about why most people quit the gym in January"_ — here's what the pipeline produced:
 
-> Most teams tune their embedding model obsessively and ignore how they split their documents. That's backwards.
+> 80% of New Year gym memberships are abandoned by February. Not because people are lazy. Because the goal was wrong.
 >
-> A Vectara study published at NAACL 2025 tested 25 chunking configurations with 48 embedding models. The finding: chunking configuration had as much or more influence on retrieval quality as the choice of embedding model.
+> "Get in shape" isn't a goal. It's a vibe. You can't measure a vibe. You can't fail at a vibe clearly enough to course-correct.
 >
-> The practical defaults from four independent benchmarks:
+> Here's what actually sticks:
 >
-> → Start with recursive splitting at 512 tokens, 50-100 token overlap
-> → Factoid queries: 256-512 tokens work fine
-> → Analytical/multi-hop queries: bump to 512-1,024 tokens
+> → "Squat my bodyweight by March" — specific, testable, has a deadline
+> → "Go 3x per week for 8 weeks" — system, not outcome
+> → "Lose 4kg before my trip in April" — tied to something real
 >
-> What chunking strategy are you running in production?
+> The people still in the gym in March didn't have more discipline. They had a clearer target.
+>
+> What was the goal that actually got you consistent?
 
-No "delve." No "it's worth noting." No "in today's rapidly evolving landscape." Just a real person with real opinions sharing something useful.
+No "delve." No "it's worth noting." No "in today's rapidly evolving landscape." Just a real person with real opinions sharing something useful — in their voice, for their audience.
 
 ---
 
@@ -47,12 +49,12 @@ No "delve." No "it's worth noting." No "in today's rapidly evolving landscape." 
 <tr>
 <td>
 
-It's worth noting that in today's rapidly evolving AI landscape, leveraging robust chunking strategies is crucial for building comprehensive RAG pipelines. Furthermore, this groundbreaking approach empowers developers to streamline their retrieval systems seamlessly.
+It's worth noting that in today's rapidly evolving fitness landscape, leveraging a comprehensive gym routine is crucial for fostering long-term wellness. Furthermore, implementing a robust workout strategy empowers individuals to streamline their health journey seamlessly.
 
 </td>
 <td>
 
-Most teams tune their embedding model obsessively and ignore how they split their documents. That's backwards. Chunking configuration had as much or more influence on retrieval quality as the choice of embedding model.
+80% of New Year gym memberships are abandoned by February. Not because people are lazy. Because the goal was wrong. "Get in shape" isn't a goal. It's a vibe. You can't measure a vibe.
 
 </td>
 </tr>
@@ -92,23 +94,51 @@ cd my-content-pipeline
 
 ### 2. Open in your AI tool
 
-Open the folder in **any** AI coding tool — Kiro, Claude Code, Cursor, Windsurf, Copilot, Cline. The AI reads `AGENTS.md` automatically and knows what to do. No config needed.
+Open the folder in **any** AI coding tool:
 
-### 3. Set up your pipeline
+| Tool | How |
+|------|-----|
+| **Kiro** | File → Open Folder → select the cloned folder |
+| **Claude Code** | `cd my-content-pipeline` then run `claude` |
+| **Cursor** | File → Open Folder → select the cloned folder |
+| **Windsurf / Cline / Copilot** | Same — open the folder, start chatting |
 
-Start a conversation. The AI will ask:
+The AI reads `AGENTS.md` automatically and becomes your content pipeline. No extensions, no config files, no setup commands.
+
+### 3. Set up your pipeline (3 minutes)
+
+Start a conversation. The AI will greet you:
 
 > "Welcome to post-kit! Guided or manual setup?"
 
-Pick **guided** — answer 10 questions about your niche, voice, and style. Takes 3 minutes.
+Pick **guided**. The AI asks you 10 simple questions:
+
+1. What's your niche? _(fitness, crypto, marketing, cooking — anything)_
+2. How do you want to sound? _(casual, professional, savage, educational)_
+3. What platforms? _(LinkedIn, X, both, others)_
+4. What do you post about? _(your topics + rough percentage split)_
+5. Do you use images?
+6. Do you do memes/humor?
+7. News-based or evergreen content?
+8. Where does your audience hang out online?
+9. How often do you post?
+10. Your timezone?
+
+From your answers, the AI generates your personalized config files in `my-niche/` — your voice profile, content rules, sources, hashtags, and active modules. You own all of it.
 
 ### 4. Start posting
 
-```
-"Write a post about [topic]"
-```
+Say any of these:
 
-That's it. The pipeline handles research, writing, voice matching, anti-AI filtering, and quality checks.
+| You say | What happens |
+|---------|-------------|
+| "Write a post about [topic]" | Full pipeline runs → finished post in `posts/` |
+| "What's trending in my space?" | Scouts Reddit, HN, RSS for hot topics |
+| "Roast [company/topic]" | Meme pipeline (if humor is enabled) |
+| "Help me improve my hooks" | Brainstorms better opening lines with you |
+| "Repurpose this for X" | Adapts a LinkedIn post for Twitter format |
+
+Every post goes through: **Research → Write → Voice Match → Anti-AI Filter → Quality Gate → Output.** You get a publish-ready post that sounds like you wrote it.
 
 ---
 
