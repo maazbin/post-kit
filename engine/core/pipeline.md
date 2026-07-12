@@ -18,11 +18,19 @@ Request → Research → Write → Voice Pass → Anti-AI Pass → Quality Gate 
 
 **Run if:** user says "what's trending", "find me something to post about", or the topic needs current data.
 
-How to research:
-1. Check the user's `sources.md` for where to look (subreddits, feeds, communities)
-2. Use available MCP tools (web search, Reddit) to find what's current
-3. Cross-validate: a topic is worth posting about if it appears in 2+ independent sources
-4. Score urgency:
+**How to research — follow `engine/core/web-research.md`:**
+
+The web-research module handles all search strategy. It will:
+1. Classify the research intent (quick fact vs deep investigation)
+2. Run multi-angle searches (direct + community + authoritative)
+3. Triage sources by quality, recency, and cross-validation
+4. Fetch and extract key passages from top sources
+5. Synthesize findings into content-ready format (what happened → why it matters → the angle)
+
+**Additional source checks:**
+- Check the user's `sources.md` for where to look (subreddits, feeds, communities)
+- Cross-validate: a topic is worth posting about if it appears in 2+ independent sources
+- Score urgency:
    - Happening right now → post today
    - Trending this week → post within 2-3 days
    - Evergreen → queue for whenever

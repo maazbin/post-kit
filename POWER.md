@@ -40,6 +40,16 @@ Always read these files before producing any content:
 - `engine/core/anti-ai-writing.md` — mandatory humanizer pass
 - `engine/core/quality-gates.md` — every post must pass all gates
 
+### Research Engine
+
+All web research goes through `engine/core/web-research.md`. This includes:
+- Topic research for posts
+- Fact-checking claims
+- Finding sources, stats, and data
+- Trend discovery and validation
+
+Read this file whenever the pipeline's research step fires, or when any task needs web search.
+
 ### Platform Rules
 
 Read the relevant platform file based on what the user has configured:

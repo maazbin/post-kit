@@ -1,6 +1,6 @@
 # MCP Tools
 
-MCP (Model Context Protocol) tools give your AI agent the ability to research topics in real time — searching the web, checking Reddit, monitoring HackerNews, and more.
+MCP (Model Context Protocol) tools give your AI agent the ability to research topics in real time — searching the web, checking Reddit, and more.
 
 ---
 
@@ -12,14 +12,23 @@ Without MCPs, the AI can still write posts but can't research what's currently t
 
 ---
 
+## Recommended Approach: Built-in Web Search + Engine
+
+Most AI tools (Kiro, Claude Code, Cursor) have built-in web search and page fetching. Post-kit includes a **web research engine** (`engine/core/web-research.md`) that teaches the agent HOW to search effectively — multi-angle queries, source triage, progressive depth, and citation-backed synthesis.
+
+This gives you:
+- Zero external dependencies for search
+- No API keys or rate limits
+- Smarter research through better methodology, not more tools
+- Works across any AI tool with web access
+
+The web research engine activates automatically during the pipeline's Research step.
+
+---
+
 ## Universal MCPs (Recommended for Everyone)
 
 These work for any niche:
-
-### Web Search
-**What it does:** Searches the internet for current information on any topic.
-**Why you need it:** Research, fact-checking, finding context for trending topics.
-**Setup:** Usually built into your AI tool (Kiro, Claude Code). No extra setup needed.
 
 ### Reddit
 **What it does:** Checks subreddit posts (hot, rising, top) for what your audience is talking about.
@@ -29,11 +38,6 @@ These work for any niche:
 ---
 
 ## Optional MCPs (Depending on Your Niche)
-
-### HackerNews
-**Best for:** Tech, startup, developer, AI niches
-**What it does:** Checks front page stories, searches by topic, monitors community sentiment.
-**Tools:** `get_stories`, `search_stories`, `get_story_info`
 
 ### GitHub Trending
 **Best for:** Developer, open source, tools niches
@@ -45,10 +49,23 @@ These work for any niche:
 **What it does:** Fetches articles from configured RSS feeds.
 **Setup:** Configure your feeds in the MCP settings.
 
+### Exa (Semantic Search)
+**Best for:** Finding content by description rather than keywords.
+**What it does:** Semantic/meaning-based web search. Great for discovering pages like "blog post comparing React and Vue for beginners."
+**Tools:** `web_search_exa`, `web_fetch_exa`
+**Setup:** Free tier available at [exa.ai](https://exa.ai). Add to your global MCP config.
+
+### HackerNews
+**Best for:** Tech, startup, developer, AI niches
+**What it does:** Checks front page stories, searches by topic, monitors community sentiment.
+**Tools:** `get_stories`, `search_stories`, `get_story_info`
+**Setup:** `mcp-hn` — standalone binary, no API key needed.
+
 ### Apify (Web Browser)
 **Best for:** Deep research, scraping specific URLs for full article content.
-**What it does:** Fetches and reads full web pages, extracts content.
+**What it does:** Fetches and reads full web pages via a real browser, extracts content as markdown.
 **Tools:** `rag-web-browser`
+**Setup:** Requires an Apify account and API token.
 
 ---
 
@@ -56,9 +73,9 @@ These work for any niche:
 
 | Your content style | MCPs needed |
 |-------------------|-------------|
-| News/commentary (reactive to current events) | Yes — web search + Reddit minimum |
-| Evergreen content (tips, tutorials, stories) | Optional — web search is helpful but not required |
-| Memes/humor about your industry | Yes — Reddit for community pulse |
+| News/commentary (reactive to current events) | Built-in web search + Reddit minimum |
+| Evergreen content (tips, tutorials, stories) | Built-in web search is sufficient |
+| Memes/humor about your industry | Reddit for community pulse |
 | Personal stories/life content | No MCPs needed |
 
 ---
@@ -67,7 +84,7 @@ These work for any niche:
 
 Setup depends on your AI tool:
 
-**Kiro:** MCPs are configured in `~/.kiro/settings/mcp.json`. Some powers include MCP configs automatically.
+**Kiro:** MCPs are configured in `.kiro/settings/mcp.json` (workspace) or `~/.kiro/settings/mcp.json` (global).
 
 **Claude Code:** MCPs are configured in `.mcp.json` in your project root or `~/.claude/settings/mcp.json` globally.
 

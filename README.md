@@ -70,7 +70,7 @@ The anti-AI pass runs on **every** post. It catches 50+ banned words, AI sentenc
 |---------|-------------|
 | 🎙️ **Voice matching** | Learns how you sound — posts read like YOU wrote them |
 | 🚫 **Anti-AI filter** | Automatically removes robotic language, every post, no exceptions |
-| 🔬 **Research-backed** | Pulls from Reddit, HackerNews, RSS, web — cross-validates sources |
+| 🔍 **Smart research** | Multi-angle web search with source triage, cross-validation, and citation — no MCPs needed |
 | 📦 **Modular** | Only enable what you need (visuals, memes, news, video, analytics) |
 | 📱 **Multi-platform** | LinkedIn, X, YouTube, Newsletter — one post adapts to many |
 | ⚡ **5-minute setup** | Guided onboarding — answer 10 questions, start posting immediately |
@@ -155,7 +155,7 @@ graph LR
 
 Every post goes through this pipeline automatically:
 
-1. **Research** — Finds trending topics from your configured sources (Reddit, HN, RSS)
+1. **Research** — Multi-angle web search with intent classification, source triage, and cross-validation (powered by `engine/core/web-research.md`)
 2. **Write** — Drafts following your content rules (length, structure, hooks)
 3. **Voice Pass** — Rewrites to match YOUR voice profile
 4. **Anti-AI Pass** — Strips banned words, AI patterns, robotic structure _(mandatory, always on)_
@@ -188,7 +188,7 @@ Don't need memes? Don't enable it. Want analytics later? Just ask.
 ```
 post-kit/
 ├── engine/
-│   ├── core/           # Pipeline, onboarding, quality gates, anti-AI pass
+│   ├── core/           # Pipeline, onboarding, quality gates, anti-AI pass, web research
 │   ├── modules/        # Optional capabilities (news, memes, visuals, etc.)
 │   └── platforms/      # Platform-specific rules (LinkedIn, X, etc.)
 ├── examples/
@@ -228,6 +228,7 @@ See [docs/contributing.md](docs/contributing.md) for guidelines.
 
 - [x] Core pipeline (Research → Write → Voice → Anti-AI → Quality Gate → Output)
 - [x] Guided onboarding (10-question setup)
+- [x] Built-in web research engine (multi-angle search, source triage, no MCPs required)
 - [x] LinkedIn platform support
 - [x] X (Twitter) platform support
 - [x] 8 optional modules (news, memes, visuals, video, carousel, analytics, repurpose, image prompts)

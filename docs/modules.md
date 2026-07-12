@@ -4,13 +4,30 @@ Modules are optional capabilities you can add to your pipeline. Each module is a
 
 ---
 
-## How to Enable a Module
+## Core Engine (always active)
+
+These live in `engine/core/` and power every post automatically. You don't enable or disable them — they're always on.
+
+| File | What it does |
+|------|-------------|
+| `pipeline.md` | The master flow: Research → Write → Voice → Anti-AI → Quality Gate → Output |
+| `web-research.md` | **Search amplifier.** Turns any agent's basic web search into multi-angle research with intent classification, query decomposition, source triage, cross-validation, and citation. No MCPs or API keys needed. |
+| `anti-ai-writing.md` | Strips AI-sounding language from every post. Mandatory, cannot be disabled. |
+| `quality-gates.md` | Every post must pass all gates before output. |
+| `onboarding.md` | First-time guided setup flow. |
+| `brainstorm.md` | Collaborative improvement skill for any part of the pipeline. |
+
+---
+
+## Optional Modules
+
+## How to Enable an Optional Module
 
 **Option A (guided):** Tell the AI "I want to start doing [memes/video/etc]" → it asks you setup questions and creates the file.
 
 **Option B (manual):** Copy the template from `engine/modules/[module-name].md` into your `my-niche/` folder and customize it.
 
-## How to Disable a Module
+## How to Disable an Optional Module
 
 Delete the file from `my-niche/`. Or tell the AI "I don't want [module] anymore."
 
