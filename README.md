@@ -131,9 +131,14 @@ That's it. The pipeline handles research, writing, voice matching, anti-AI filte
 
 ## ⚙️ How It Works
 
-<p align="center">
-  <img src="docs/images/pipeline-flow.svg" alt="post-kit pipeline: Research → Write → Voice Pass → Anti-AI → Quality Gate → Publish" width="800"/>
-</p>
+```mermaid
+graph LR
+    A[Research] --> B[Write]
+    B --> C[Voice Pass]
+    C --> D[Anti-AI Pass]
+    D --> E[Quality Gate]
+    E --> F[Output]
+```
 
 Every post goes through this pipeline automatically:
 
