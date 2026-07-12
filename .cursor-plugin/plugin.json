@@ -3,7 +3,8 @@
   "description": "Your AI content engine. Research, write, and publish posts that sound like you — zero code, any niche, any platform.",
   "version": "1.0.0",
   "author": {
-    "name": "Huzaifa Ali"
+    "name": "Huzaifa Ali",
+    "email": "huzaifaali4013399@gmail.com"
   },
   "homepage": "https://github.com/Huzaifa-ali/post-kit",
   "repository": "https://github.com/Huzaifa-ali/post-kit",
