@@ -1,0 +1,7 @@
+# Mark markdown files as documentation so GitHub language stats
+# don't show the repo as "100% Markdown" (which looks like no substance)
+*.md linguist-documentation
+*.yaml linguist-data
+
+# Normalize line endings
+* text=auto
