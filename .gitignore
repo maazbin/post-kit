@@ -1,0 +1,17 @@
+# User's personal config (never tracked by framework updates)
+my-niche/
+
+# User's content output
+posts/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Environment / API keys
+.env
+*.env.local

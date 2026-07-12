@@ -1,0 +1,62 @@
+# Hashtag Strategy for AI/Tech Niche
+
+## Rules
+# 4-5 hashtags per post
+# Lowercase, no PascalCase
+# Placement: end of post text
+# Never generic filler unless directly relevant
+# Rotate niche tags — don't repeat exact same set on consecutive posts
+
+## Always Include (Every Post)
+always:
+  - "#ainews"
+  - "#ai"
+  - "#generativeai"
+
+## Topic-Specific (pick 2-3 per post)
+topics:
+  openai:
+    - "#openai"
+    - "#chatgpt"
+  anthropic:
+    - "#anthropic"
+    - "#claude"
+  google:
+    - "#google"
+    - "#gemini"
+  meta:
+    - "#meta"
+    - "#opensource"
+  deepseek:
+    - "#deepseek"
+    - "#opensource"
+  mistral:
+    - "#mistral"
+    - "#opensource"
+  pricing:
+    - "#generativeai"
+    - "#technology"
+  regulation:
+    - "#airegulation"
+    - "#techpolicy"
+  opensource:
+    - "#opensource"
+    - "#machinelearning"
+  coding:
+    - "#coding"
+    - "#software"
+  agents:
+    - "#aiagents"
+    - "#automation"
+  hardware:
+    - "#technology"
+    - "#nvidia"
+  funding:
+    - "#startup"
+    - "#funding"
+  safety:
+    - "#aisafety"
+    - "#technology"
+  research:
+    - "#machinelearning"
+    - "#research"

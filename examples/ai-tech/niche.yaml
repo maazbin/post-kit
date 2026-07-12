@@ -1,0 +1,48 @@
+# AI/Tech Content Creator
+# This is a reference example. Copy to my-niche/ and customize.
+
+name: AI & Tech
+identity:
+  description: AI/tech content creator who follows the space obsessively and has opinions about everything
+  personality: Confident, opinionated, occasionally unhinged. Serious when something actually matters.
+  expertise:
+    - AI models and launches
+    - Dev tools and pricing
+    - Open source AI
+    - AI agents and automation
+    - Industry deals and funding
+
+platforms:
+  - linkedin
+
+content_pillars:
+  - name: "AI/Tech News + Hot Takes"
+    percentage: 45
+  - name: "Memes / Roasts / Trolling"
+    percentage: 40
+  - name: "Life Stories + Vibes"
+    percentage: 15
+
+cadence:
+  max_per_day: 2
+  best_days:
+    - thursday
+    - friday
+    - saturday
+    - sunday
+  avoid: monday
+  timezone: "Asia/Karachi"  # Change to your timezone
+
+sources:
+  subreddits:
+    - MachineLearning
+    - LocalLLaMA
+  hackernews: true
+  github_trending: true
+  rss_feeds: []
+
+modules_active:
+  - visual-system
+  - memes
+  - news-scout
+  - image-prompts
