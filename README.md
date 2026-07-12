@@ -103,7 +103,7 @@ Open the folder in **any** AI coding tool:
 | **Cursor** | File → Open Folder → select the cloned folder |
 | **Windsurf / Cline / Copilot** | Same — open the folder, start chatting |
 
-The AI reads `AGENTS.md` automatically and becomes your content pipeline. No extensions, no config files, no setup commands.
+The AI reads `AGENTS.md` and becomes your content pipeline. Some tools need a one-time wiring step — see [Agent Auto-Discovery](#-agent-auto-discovery) below.
 
 ### 3. Set up your pipeline (3 minutes)
 
@@ -180,6 +180,81 @@ Enable by telling the AI "I want to do [feature]" or by dropping a `.md` file in
 | **Analytics** | Tracks what works, feeds insights back into the pipeline |
 
 Don't need memes? Don't enable it. Want analytics later? Just ask.
+
+---
+
+## 🔌 Agent Auto-Discovery
+
+Most AI tools don't auto-read `AGENTS.md` unless you wire them up. Here's how to make the pipeline load automatically for each tool — so you just say "write a post" and it works.
+
+| Tool | Config file to create | Location |
+|------|----------------------|----------|
+| **Kiro** | `.kiro/steering/post-kit.md` | Workspace root (outside `post-kit/`) |
+| **Claude Code** | `CLAUDE.md` | Workspace root |
+| **Cursor** | `.cursor/rules/post-kit.md` | Inside `post-kit/` or workspace root |
+| **Windsurf** | `.windsurfrules` | Workspace root |
+| **Copilot** | `.github/copilot-instructions.md` | Workspace root |
+
+### Kiro
+
+Create `.kiro/steering/post-kit.md` at your workspace root:
+
+```markdown
+# post-kit Content Pipeline
+
+When the user asks to create, write, draft, brainstorm, or research content,
+follow the post-kit pipeline.
+
+## Bootstrap
+
+1. Read `post-kit/AGENTS.md`
+2. Read `post-kit/my-niche/niche.yaml` — if missing, run onboarding
+3. Follow `post-kit/engine/core/pipeline.md` for every content request
+```
+
+Kiro's steering files are always-included by default — the pipeline fires automatically on any content request.
+
+### Claude Code
+
+Create a `CLAUDE.md` at your workspace root:
+
+```markdown
+Read and follow `post-kit/AGENTS.md` for all content creation requests.
+```
+
+Claude Code reads `CLAUDE.md` automatically at the start of every conversation.
+
+### Cursor
+
+Create `.cursor/rules/post-kit.md` (or `.cursorrules` at workspace root):
+
+```markdown
+Read and follow `post-kit/AGENTS.md` for all content creation requests.
+Follow the pipeline in `post-kit/engine/core/pipeline.md` for every post.
+Always read `post-kit/my-niche/voice.md` and `post-kit/my-niche/content-rules.md` before writing.
+```
+
+### Windsurf
+
+Create `.windsurfrules` at your workspace root:
+
+```markdown
+Read and follow `post-kit/AGENTS.md` for all content creation requests.
+```
+
+### GitHub Copilot
+
+Create `.github/copilot-instructions.md`:
+
+```markdown
+Read and follow `post-kit/AGENTS.md` for all content creation requests.
+```
+
+### Why is this needed?
+
+AI tools don't scan every markdown file in your project looking for instructions. Each tool has its own specific file it checks at startup. The `AGENTS.md` file is the universal instruction set — the wiring files just tell your specific tool to read it.
+
+If you use multiple AI tools, create the config for each one. They all point to the same `AGENTS.md`, so behavior stays consistent.
 
 ---
 
