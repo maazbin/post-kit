@@ -2,6 +2,8 @@
 
 # post-kit
 
+<img src="docs/images/post-kit.png" alt="post-kit — Your AI assistant's content engine" width="800"/>
+
 **Your AI assistant's content engine.** Research, write, and publish posts that sound like you — zero code, any niche, any platform.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
