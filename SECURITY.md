@@ -6,7 +6,7 @@ If you discover a security issue in post-kit, please report it responsibly.
 
 **Do NOT open a public GitHub issue for security vulnerabilities.**
 
-Instead, email: **huzaifa@example.com**
+Instead, email: **huzaifaali4013399@gmail.com**
 
 Include:
 - Description of the vulnerability
