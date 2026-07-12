@@ -7,9 +7,9 @@
 **Your AI assistant's content engine.** Research, write, and publish posts that sound like you — zero code, any niche, any platform.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Works with Kiro](https://img.shields.io/badge/Works_with-Kiro-blue.svg)](https://kiro.dev)
-[![Works with Claude Code](https://img.shields.io/badge/Works_with-Claude_Code-orange.svg)](https://docs.anthropic.com/en/docs/claude-code)
-[![Works with Cursor](https://img.shields.io/badge/Works_with-Cursor-purple.svg)](https://cursor.com)
+[![Works with any AI tool](https://img.shields.io/badge/Works_with-Any_AI_Tool-blue.svg)](#-quick-start)
+[![Zero Code](https://img.shields.io/badge/Zero_Code-Markdown_Only-orange.svg)](#-how-it-works)
+[![GitHub Template](https://img.shields.io/badge/Use_this-Template-purple.svg)](https://github.com/Huzaifa-ali/post-kit/generate)
 
 [Quick Start](#-quick-start) · [How It Works](#-how-it-works) · [Modules](#-modules) · [Examples](#-examples) · [Contributing](#-contributing)
 
@@ -77,64 +77,24 @@ The anti-AI pass runs on **every** post. It catches 50+ banned words, AI sentenc
 
 ## 🚀 Quick Start
 
-### 1. Install
+### 1. Get your own copy
 
-<details>
-<summary><b>Kiro</b> (recommended)</summary>
+<a href="https://github.com/Huzaifa-ali/post-kit/generate">
+  <img src="https://img.shields.io/badge/Use_this_template-green?style=for-the-badge" alt="Use this template"/>
+</a>
 
-1. Open Kiro → Powers panel → **Add Custom Power**
-2. Select **Import power from GitHub**
-3. Paste: `https://github.com/Huzaifa-ali/post-kit`
-4. Click **Install**
-
-The power activates automatically when you mention content-related keywords.
-
-</details>
-
-<details>
-<summary><b>Claude Code</b></summary>
-
-Clone the repo and let Claude Code read the `AGENTS.md` file:
+Click **"Use this template"** on GitHub to create your own copy. Or clone directly:
 
 ```bash
-git clone https://github.com/Huzaifa-ali/post-kit.git
+git clone https://github.com/Huzaifa-ali/post-kit.git my-content-pipeline
+cd my-content-pipeline
 ```
 
-Open the folder in Claude Code. It auto-detects `AGENTS.md` and follows the pipeline instructions. No additional config needed — just start a conversation.
+### 2. Open in your AI tool
 
-</details>
+Open the folder in **any** AI coding tool — Kiro, Claude Code, Cursor, Windsurf, Copilot, Cline. The AI reads `AGENTS.md` automatically and knows what to do. No config needed.
 
-<details>
-<summary><b>Cursor</b></summary>
-
-Cursor reads `AGENTS.md` automatically from the project root:
-
-```bash
-git clone https://github.com/Huzaifa-ali/post-kit.git
-```
-
-Open the folder in Cursor. The agent picks up the instructions from `AGENTS.md`. Alternatively, import as a remote rule:
-
-1. Open **Customize** in the sidebar → **Rules** → **Add Rule**
-2. Select **Remote Rule (GitHub)**
-3. Paste: `https://github.com/Huzaifa-ali/post-kit`
-
-</details>
-
-<details>
-<summary><b>Any other AI tool</b></summary>
-
-```bash
-git clone https://github.com/Huzaifa-ali/post-kit.git
-```
-
-Open the folder in your AI tool. Any tool that reads markdown instruction files (Windsurf, Copilot, Cline, etc.) will pick up the pipeline from `AGENTS.md` automatically.
-
-</details>
-
-</details>
-
-### 2. Set up your pipeline
+### 3. Set up your pipeline
 
 Start a conversation. The AI will ask:
 
@@ -142,7 +102,7 @@ Start a conversation. The AI will ask:
 
 Pick **guided** — answer 10 questions about your niche, voice, and style. Takes 3 minutes.
 
-### 3. Start posting
+### 4. Start posting
 
 ```
 "Write a post about [topic]"
