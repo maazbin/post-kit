@@ -44,10 +44,10 @@ Use this to pick the right format for your goal:
 - **Short paragraphs:** 1-3 sentences per paragraph
 - **Line breaks between thoughts:** White space = dwell time
 - **Hook in first 2 lines:** Everything above the "see more" fold must create curiosity
-- **Hashtags:** 3-5, placed at the end (below the fold)
+- **Hashtags:** 1-2 (max 3), placed at the end (below the fold). See Hashtag Rules section.
 - **Emojis as bullets:** Use sparingly — →, •, ↳ for structure, not decoration
-- **Links:** NEVER in the post body (kills reach). Always put links in the first comment.
-- **Character limit:** 3,000 characters max, but sweet spot is 800-1,500 for most post types
+- **Links:** The link PREVIEW CARD is what kills reach (halves impressions per MagicPost 566K post study). A raw URL in the post body costs nothing. Safe default: put links in first comment. If you need a link in the body, paste the raw URL without triggering the preview card. NEVER use LinkedIn's "attach link" button.
+- **Character limit:** 3,000 characters max. Sweet spot is 1,200-1,800 for news/opinion. 1,500-2,500 for deep analysis. Under 300 for meme/visual posts only.
 
 ---
 
@@ -64,13 +64,13 @@ Use this to pick the right format for your goal:
 ## What Kills Reach
 
 - **Unedited AI output** — LinkedIn's AI detection suppresses robotic-sounding content
-- **Links in post body** — Put them in comments instead
+- **Link preview cards** — The preview card (auto-generated thumbnail + title when you attach a link) halves reach. Raw URLs in text don't have this penalty. First-comment is still the safest approach for external links.
 - **No hook in first 2 lines** — If the start is boring, nobody clicks "see more"
 - **Engagement bait** — "Like if you agree" / "Tag someone who..." / polls asking obvious questions
 - **Off-topic scattershot** — Posting about 10 different topics destroys topic authority
 - **Company shilling** — Promotional content without genuine value
 - **Monday posting** — Consistently weakest day on LinkedIn
-- **3+ posts per day** — Oversaturation kills individual post reach
+- **2+ posts per day** — Oversaturation kills individual post reach for accounts under 10K followers. One quality post/day is the cap.
 
 ---
 
@@ -78,12 +78,15 @@ Use this to pick the right format for your goal:
 
 | Factor | Recommendation |
 |--------|---------------|
-| Best days | Thursday through Sunday |
-| Worst day | Monday |
-| Max posts/day | 2 |
-| Best time | Morning (check your audience's timezone) |
-| Reply window | First 2 hours after posting — reply to every comment |
-| Content mix | Stay 80%+ on-topic for your niche |
+| Best days | Tuesday through Friday |
+| Acceptable | Saturday, Sunday (lower but not dead) |
+| Worst day | Monday (consistently weakest) |
+| Posts per day | 1 (hard cap — oversaturation kills reach at 2+/day for small accounts) |
+| Posts per week | 5-7 text + 1-2 video (Buffer 2M+ post study: 2-5/week is the switch-flip) |
+| Best time | Morning in your audience's timezone |
+| Reply window | First 90 minutes after posting — reply to every comment (360Brew scores early engagement heavily) |
+| Content mix | Stay 80%+ on-topic for your niche (topic authority compounds) |
+| Video days | Don't also post text the same day (cannibalization) |
 
 ---
 
@@ -116,14 +119,18 @@ Use this to pick the right format for your goal:
 
 ## Content Type Specs
 
-| Type | Ideal Length | Format |
-|------|-------------|--------|
-| News + opinion | 50-100 words | Text only or screenshot + text |
-| Meme/roast | 1-4 lines | Image + caption |
-| Data/pricing | 2-4 lines | Screenshot or data card |
-| Opinion/hot take | 50-150 words | Text only (no image) |
-| Personal story | 100-200 words | Text only |
-| Tutorial/how-to | 100-200 words or carousel | Text or PDF carousel |
+LinkedIn's "Depth Score" rewards dwell time. Posts 1,200-1,800 characters get ~3x the engagement of short posts under 200 chars (Stan.store 6-month study). Ultra-long posts (2,000+) hit 2.56% ER vs 1.53% for short updates (Taplio 2026).
+
+| Type | Ideal Length (chars) | Format |
+|------|---------------------|--------|
+| News + opinion | 900-1,600 | Text only or screenshot + text |
+| Meme/roast | Under 300 (1-4 lines) | Image + caption |
+| Data/pricing | 600-1,000 | Screenshot or data card + short text |
+| Opinion/hot take | 800-1,400 | Text only (no image) |
+| Deep analysis / benchmarks | 1,500-2,500 | Text only — max dwell time, save-worthy |
+| Tutorial/how-to | 1,200-2,000 or carousel | Text or PDF carousel |
+
+**Rule:** Short posts only work for memes/visuals where the image carries the content. For everything else, fill the space.
 
 ---
 
@@ -139,12 +146,14 @@ Use this to pick the right format for your goal:
 
 ## Hashtag Rules
 
-- 3-5 hashtags per post (research-backed sweet spot)
+- 1-2 hashtags per post (2026 optimal per MagicPost 566K-post study). Max 3 absolute ceiling.
+- 1 hashtag = peak engagement. 3+ actively hurts (tax effect on reach).
 - Place at the end of the post (below fold)
-- Lowercase preferred
-- Mix broad (#ai, #marketing) with specific (#openai, #contentcreation)
-- Don't repeat the exact same set on consecutive posts
-- Never generic filler unless directly relevant (#innovation, #futureofwork)
+- CamelCase for accessibility (#GenerativeAI not #generativeai)
+- Use specific niche tags only (#LLM, #AIAgents, #OpenSourceAI)
+- Drop broad mega-tags (#AI, #Innovation, #Technology) — 360Brew classifies via NLP, not hashtags
+- Don't repeat the exact same tag on consecutive posts
+- Hashtags are search/SEO signals, not distribution drivers under 360Brew
 
 ---
 

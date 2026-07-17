@@ -72,14 +72,42 @@ The post must have passed through `engine/core/anti-ai-writing.md` with zero vio
 **Pass if:**
 - No banned words
 - No banned patterns
+- Em dashes used sparingly (max ~2 per post) — part of the real voice, but not stacked or used as a crutch
 - Doesn't read like AI output
 - Has personality and irregular rhythm
+- Uses contractions naturally (don't, won't, it's)
 
-**Fail if:** Any banned word or pattern remains. Run anti-AI pass again.
+**Fail if:** Any banned word or pattern remains, OR more than ~2 em dashes appear, OR the "it's not X — it's Y" reframe shows up more than once. Run anti-AI pass again.
+
+**Common miss:** Em dashes stack up fast. Count them. Two is fine (it's the voice). Three or more, cut the weakest to a period or comma. The reframe inversion belongs in the quoted-opinion line only, not every paragraph.
 
 ---
 
-## Gate 6: Platform Compliance
+## Gate 6: Pillar Alignment
+
+Every post must map to one of the content pillars defined in `my-niche/niche.yaml`.
+
+**Current pillars:**
+1. AI News + Hot Takes (55%)
+2. GitHub Trending / Open Source (20%)
+3. Global AI Policy & Power Shifts (15%)
+4. Memes / Roasts / Pricing Drama (10%)
+
+**Pass if:**
+- The post clearly belongs to one pillar
+- The post's metadata/front-matter labels it correctly using a pillar that EXISTS in niche.yaml
+- The tone matches the pillar (news = opinionated, GitHub = enthusiastic, policy = analytical, memes = deadpan roast)
+
+**Fail if:**
+- Post uses a pillar name that doesn't exist (e.g., "AI Tooling", "Tutorials", "Career Advice")
+- Post doesn't fit any pillar — it's off-topic for the account
+- Post tries to span multiple pillars without committing to one angle
+
+**Why this matters:** 360Brew rewards topic authority. Off-pillar posts dilute your semantic signal. If you want to expand pillars, update niche.yaml FIRST, then post.
+
+---
+
+## Gate 7: Platform Compliance
 
 The post must follow the active platform's rules.
 
@@ -91,11 +119,12 @@ The post must follow the active platform's rules.
 
 ---
 
-## Gate 7: Length Check
+## Gate 8: Length Check
 
 Compare against the length rules in `my-niche/content-rules.md`.
 
-- Is it within the specified word/line count for this post type?
+- Is it within the specified character/line count for this post type?
+- Is it long enough? Short posts (under ~800 chars) underperform unless it's a meme/visual post.
 - If the visual carries the content, is the text SHORT?
 - No unnecessary padding or filler?
 

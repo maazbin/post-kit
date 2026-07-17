@@ -56,11 +56,10 @@ Never use these sentence structures or phrases:
 - "Let me share my thoughts on..."
 
 ### Structure patterns
-- "It's not about X, it's about Y" (formulaic inversion)
 - Triple adjective stacking ("innovative, scalable, and robust")
 - Starting 3+ sentences with "This" in the same post
-- "The question isn't X — it's Y"
-- Em dashes used for dramatic pauses — use periods, commas, or colons instead
+- Em dashes (—): allowed in moderation — they're part of the authentic voice for reframes and appositives. But max ~2 per post. Never stack them, and don't lean on "it's not X — it's Y" in every paragraph. If more than 2 appear, cut the weakest to a period or comma.
+- The "it's not X, it's Y" reframe: fine ONCE, and best saved for the quoted-opinion line (it's a signature move). Banned as a repeated per-paragraph crutch.
 
 ### Filler/hedging
 - "It goes without saying"
