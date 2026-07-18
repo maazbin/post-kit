@@ -44,15 +44,20 @@ Research → Write → Voice Pass → Anti-AI Pass → Quality Gate → Output
 | User says | What to do |
 |-----------|-----------|
 | "write a post about [topic]" | Run the full pipeline |
-| "what's trending" | Use news-scout module (if active) |
+| "what's trending" / "find me topics" / "what should I post about" | Use news-scout module → run "The Daily Scout Command" from `my-niche/news-scout.md` |
 | "roast [topic]" / "meme about [x]" | Use memes module (if active) |
 | "help me improve my [voice/hooks/etc]" | Follow `engine/core/brainstorm.md` |
 | "humanize this" | Run anti-AI pass from `engine/core/anti-ai-writing.md` |
 | "repurpose this for X" | Use repurpose module (if active) |
+| "make a video" / "video about [x]" | Use video-content module (if active) |
 
 ## Output
 
-Save posts to: `posts/YYYY-month/YYYY-MM-DD-slug/post.md`
+Save posts to: `posts/YYYY-month/YYYY-MM-DD-slug/linkedin-post.md`
+
+**This is the only valid path structure.** No subfolders like `daily/`, `news/`, `github/` inside the month folder. Every post goes flat inside the month, identified only by its date-slug folder.
+
+Example: `posts/2026-july/2026-07-14-australia-ai-copyright/linkedin-post.md`
 
 ## Key Rules
 

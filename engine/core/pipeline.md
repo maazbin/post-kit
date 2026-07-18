@@ -18,6 +18,8 @@ Request → Research → Write → Voice Pass → Anti-AI Pass → Quality Gate 
 
 **Run if:** user says "what's trending", "find me something to post about", or the topic needs current data.
 
+**If the user asks "what's trending" / "find me topics" / "what should I post about":** run **The Daily Scout Command** defined in `my-niche/news-scout.md` — follow the candidate composition and presentation rules defined there, then let the user pick which to write.
+
 **How to research — follow `engine/core/web-research.md`:**
 
 The web-research module handles all search strategy. It will:
@@ -95,9 +97,13 @@ The post must pass ALL gates to be published. If it fails any gate, revise and r
 ## Step 6: Output
 
 1. Create the output folder: `posts/YYYY-month/YYYY-MM-DD-slug/`
-2. Save the post as `post.md` (or `linkedin-post.md`, `x-post.md` if platform-specific)
-3. If visual-system module is active, include visual recommendation in the post file
-4. Present the final post to the user for approval
+   - **No subfolders** inside the month folder (no `daily/`, `news/`, `github/`)
+   - Every post goes flat inside the month, identified by its date-slug folder
+   - Example: `posts/2026-july/2026-07-14-slug/linkedin-post.md`
+2. Save the post as `linkedin-post.md` (or `x-post.md` if platform-specific)
+3. If image-prompts module is active, include 3 AI image prompts in the post file
+4. If github-screenshot module is active and this is a repo post, capture/provide screenshot
+5. Present the final post to the user for approval
 
 ---
 
