@@ -52,12 +52,11 @@ Read this file whenever the pipeline's research step fires, or when any task nee
 
 ### Platform Rules
 
-Read the relevant platform file based on what the user has configured:
+Read the relevant platform file from `engine/platforms/` based on what the user has configured in their `niche.yaml`. Only use platform files that actually exist:
 - LinkedIn → `engine/platforms/linkedin.md`
 - X (Twitter) → `engine/platforms/x.md`
-- YouTube → `engine/platforms/youtube-community.md`
-- Newsletter → `engine/platforms/newsletter.md`
-- Blog → `engine/platforms/blog.md`
+
+If a user's configured platform doesn't have a file yet, inform them and offer to help create one based on the existing platform file structure.
 
 ### Active Modules
 
@@ -77,6 +76,6 @@ When the user asks to improve any part of their pipeline, follow `engine/core/br
 
 ### Output
 
-Save posts to: `posts/YYYY-month/YYYY-MM-DD-slug/post.md`
+Save posts to: `posts/YYYY-month/YYYY-MM-DD-slug/linkedin-post.md`
 
-The output folder structure can be customized by the user.
+**This is the only valid path structure.** No subfolders like `daily/`, `news/`, `github/` inside the month folder. Every post goes flat inside the month, identified only by its date-slug folder. Use `x-post.md` for X/Twitter posts, or the appropriate platform prefix.

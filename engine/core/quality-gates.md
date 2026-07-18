@@ -87,23 +87,19 @@ The post must have passed through `engine/core/anti-ai-writing.md` with zero vio
 
 Every post must map to one of the content pillars defined in `my-niche/niche.yaml`.
 
-**Current pillars:**
-1. AI News + Hot Takes (55%)
-2. GitHub Trending / Open Source (20%)
-3. Global AI Policy & Power Shifts (15%)
-4. Memes / Roasts / Pricing Drama (10%)
+**Before checking this gate:** Read `my-niche/niche.yaml` and extract the user's `content_pillars` list. Use ONLY those pillar names — never hardcode or assume pillars.
 
 **Pass if:**
-- The post clearly belongs to one pillar
+- The post clearly belongs to one pillar from the user's niche.yaml
 - The post's metadata/front-matter labels it correctly using a pillar that EXISTS in niche.yaml
-- The tone matches the pillar (news = opinionated, GitHub = enthusiastic, policy = analytical, memes = deadpan roast)
+- The tone matches the pillar's described purpose
 
 **Fail if:**
-- Post uses a pillar name that doesn't exist (e.g., "AI Tooling", "Tutorials", "Career Advice")
-- Post doesn't fit any pillar — it's off-topic for the account
+- Post uses a pillar name that doesn't exist in the user's niche.yaml
+- Post doesn't fit any of the user's defined pillars — it's off-topic for the account
 - Post tries to span multiple pillars without committing to one angle
 
-**Why this matters:** 360Brew rewards topic authority. Off-pillar posts dilute your semantic signal. If you want to expand pillars, update niche.yaml FIRST, then post.
+**Why this matters:** Platform algorithms reward topic authority. Off-pillar posts dilute your semantic signal. If you want to expand pillars, update niche.yaml FIRST, then post.
 
 ---
 
