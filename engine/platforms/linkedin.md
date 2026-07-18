@@ -156,9 +156,9 @@ LinkedIn's "Depth Score" rewards dwell time. Use this research to calibrate your
 - 1-2 hashtags per post (2026 optimal per MagicPost 566K-post study). Max 3 absolute ceiling.
 - 1 hashtag = peak engagement. 3+ actively hurts (tax effect on reach).
 - Place at the end of the post (below fold)
-- CamelCase for accessibility (#GenerativeAI not #generativeai)
-- Use specific niche tags only (#LLM, #AIAgents, #OpenSourceAI)
-- Drop broad mega-tags (#AI, #Innovation, #Technology) — 360Brew classifies via NLP, not hashtags
+- CamelCase for accessibility (e.g. #ContentMarketing not #contentmarketing)
+- Use specific niche tags from your `my-niche/hashtags.yaml` — never broad mega-tags
+- Drop broad mega-tags (#Innovation, #Technology, #Motivation) — the algorithm classifies via NLP, not hashtags
 - Don't repeat the exact same tag on consecutive posts
 - Hashtags are search/SEO signals, not distribution drivers under 360Brew
 

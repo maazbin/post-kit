@@ -44,7 +44,7 @@ Research → Write → Voice Pass → Anti-AI Pass → Quality Gate → Output
 | User says | What to do |
 |-----------|-----------|
 | "write a post about [topic]" | Run the full pipeline |
-| "what's trending" / "anything about AI today" / "find me topics" | Use news-scout module → run "The Daily Scout Command": return EXACTLY 10 candidates, 4+ regions, 4+ non-US, 2+ GitHub repos, unique angle each |
+| "what's trending" / "find me topics" / "what should I post about" | Use news-scout module → run "The Daily Scout Command" from `my-niche/news-scout.md` |
 | "roast [topic]" / "meme about [x]" | Use memes module (if active) |
 | "help me improve my [voice/hooks/etc]" | Follow `engine/core/brainstorm.md` |
 | "humanize this" | Run anti-AI pass from `engine/core/anti-ai-writing.md` |

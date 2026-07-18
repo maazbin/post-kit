@@ -120,7 +120,7 @@ The post must follow the active platform's rules.
 Compare against the length rules in `my-niche/content-rules.md`.
 
 - Is it within the specified character/line count for this post type?
-- Is it long enough? Short posts (under ~800 chars) underperform unless it's a meme/visual post.
+- Is it long enough? Compare against the minimum lengths defined in your content-rules.md. Short posts only work when a visual carries the content.
 - If the visual carries the content, is the text SHORT?
 - No unnecessary padding or filler?
 

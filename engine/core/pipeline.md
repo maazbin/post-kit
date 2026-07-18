@@ -18,7 +18,7 @@ Request → Research → Write → Voice Pass → Anti-AI Pass → Quality Gate 
 
 **Run if:** user says "what's trending", "find me something to post about", or the topic needs current data.
 
-**If the user asks "what's trending" / "anything about AI today" / "find me topics":** run **The Daily Scout Command** in `my-niche/news-scout.md` — return EXACTLY 10 candidates (4+ regions, 4+ non-US, 2+ GitHub repos, 3+ pillars, a unique angle each), then let the user pick which to write.
+**If the user asks "what's trending" / "find me topics" / "what should I post about":** run **The Daily Scout Command** defined in `my-niche/news-scout.md` — follow the candidate composition and presentation rules defined there, then let the user pick which to write.
 
 **How to research — follow `engine/core/web-research.md`:**
 
