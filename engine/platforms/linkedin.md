@@ -47,7 +47,7 @@ Use this to pick the right format for your goal:
 - **Hashtags:** 1-2 (max 3), placed at the end (below the fold). See Hashtag Rules section.
 - **Emojis as bullets:** Use sparingly — →, •, ↳ for structure, not decoration
 - **Links:** The link PREVIEW CARD is what kills reach (halves impressions per MagicPost 566K post study). A raw URL in the post body costs nothing. Safe default: put links in first comment. If you need a link in the body, paste the raw URL without triggering the preview card. NEVER use LinkedIn's "attach link" button.
-- **Character limit:** 3,000 characters max. Sweet spot is 1,200-1,800 for news/opinion. 1,500-2,500 for deep analysis. Under 300 for meme/visual posts only.
+- **Character limit:** 3,000 characters max (platform hard limit). See `my-niche/content-rules.md` for your specific length targets by post type.
 
 ---
 
@@ -117,20 +117,27 @@ Use this to pick the right format for your goal:
 
 ---
 
-## Content Type Specs
+## Post Length Research (reference data — set your targets in content-rules.md)
 
-LinkedIn's "Depth Score" rewards dwell time. Posts 1,200-1,800 characters get ~3x the engagement of short posts under 200 chars (Stan.store 6-month study). Ultra-long posts (2,000+) hit 2.56% ER vs 1.53% for short updates (Taplio 2026).
+LinkedIn's "Depth Score" rewards dwell time. Use this research to calibrate your own length targets in `my-niche/content-rules.md`. The ideal length depends on YOUR post types, audience, and personal style.
 
-| Type | Ideal Length (chars) | Format |
-|------|---------------------|--------|
-| News + opinion | 900-1,600 | Text only or screenshot + text |
-| Meme/roast | Under 300 (1-4 lines) | Image + caption |
-| Data/pricing | 600-1,000 | Screenshot or data card + short text |
-| Opinion/hot take | 800-1,400 | Text only (no image) |
-| Deep analysis / benchmarks | 1,500-2,500 | Text only — max dwell time, save-worthy |
-| Tutorial/how-to | 1,200-2,000 or carousel | Text or PDF carousel |
+**What the data says:**
 
-**Rule:** Short posts only work for memes/visuals where the image carries the content. For everything else, fill the space.
+| Finding | Source |
+|---------|--------|
+| 1,200-1,800 chars → ~3x engagement vs posts under 200 chars | Stan.store, 6-month study, 2026 |
+| 2,000+ chars → 2.56% ER vs 1.53% for short updates | Taplio, 2026 |
+| Posts under 300 chars only outperform when a visual carries the content | Multiple studies, consistent finding |
+| 3,000 characters = LinkedIn's hard maximum | Platform limit |
+
+**General principles (platform-wide, not niche-specific):**
+
+- Longer posts earn more dwell time, which is LinkedIn's #3 ranking signal
+- Short text only works when the image/visual IS the content (memes, screenshots, data cards)
+- For text-driven posts, filling the space outperforms brevity
+- The "see more" fold (first ~2 lines) determines whether anyone reads the rest
+
+**Your actual length targets** — by post type, with specific character ranges — belong in `my-niche/content-rules.md`. Define them based on this research + your own posting style and audience behavior.
 
 ---
 
