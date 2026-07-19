@@ -1,6 +1,8 @@
 # AI/Tech Content Creator
 # This is a reference example. Copy to my-niche/ and customize.
 
+postkit_version: "1.0.0"
+
 name: AI & Tech
 identity:
   description: AI/tech content creator who follows the space obsessively and has opinions about everything

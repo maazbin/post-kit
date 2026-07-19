@@ -50,6 +50,7 @@ Research → Write → Voice Pass → Anti-AI Pass → Quality Gate → Output
 | "humanize this" | Run anti-AI pass from `engine/core/anti-ai-writing.md` |
 | "repurpose this for X" | Use repurpose module (if active) |
 | "make a video" / "video about [x]" | Use video-content module (if active) |
+| "update my niche" / "check for updates" / "what changed in post-kit" | Follow `engine/core/update.md` — reconcile niche with latest post-kit improvements |
 
 ## Output
 
