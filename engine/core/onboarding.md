@@ -91,7 +91,7 @@ If you're not sure, just tell me your niche and I'll suggest some."
 Generate the following files in `my-niche/`:
 
 ### Always generate:
-- `niche.yaml` — from answers 1, 3, 4, 9, 10
+- `niche.yaml` — from answers 1, 3, 4, 9, 10. **Always include `postkit_version`** at the top of the file, set to the current version from the `VERSION` file at the project root. This enables the update system to detect when the user's niche was last synced.
 - `voice.md` — from answer 2
 - `content-rules.md` — from answers 4, 7 (structure, length, hooks based on their style)
 - `sources.md` — from answer 8

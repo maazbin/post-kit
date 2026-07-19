@@ -4,6 +4,21 @@ The universal content creation flow. Every post goes through these steps in orde
 
 ---
 
+## Version Check (runs once per session)
+
+Before the first content request in a session, check if the user's niche is behind the current post-kit version:
+
+1. Read the `VERSION` file at the project root.
+2. Read `my-niche/niche.yaml` and check the `postkit_version` field.
+3. If `postkit_version` is missing or is lower than `VERSION`, display a **single, non-blocking notice**:
+
+> "post-kit updated to [VERSION] — your niche is on [user version]. Say **'update my niche'** to review what's new (optional, nothing changes without your approval)."
+
+4. Then proceed normally with the content request. Never block the user's workflow for an update.
+5. Do NOT repeat this notice after the first content request in a session — once per session is enough.
+
+---
+
 ## Flow
 
 ```

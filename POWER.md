@@ -74,6 +74,10 @@ Check `my-niche/` for any of these files. If they exist, follow their instructio
 
 When the user asks to improve any part of their pipeline, follow `engine/core/brainstorm.md`.
 
+### Update Skill
+
+When the user says "update my niche", "check for updates", or "what changed in post-kit", follow `engine/core/update.md`. This reconciles their niche files with the latest post-kit improvements — entirely opt-in, user's customizations always win.
+
 ### Output
 
 Save posts to: `posts/YYYY-month/YYYY-MM-DD-slug/linkedin-post.md`

@@ -15,3 +15,6 @@ Thumbs.db
 # Environment / API keys
 .env
 *.env.local
+
+# Internal specs (not shipped)
+FULL-UPDATE-SPEC.md

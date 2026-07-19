@@ -19,6 +19,8 @@ You need at least these 3 files to start:
 Your identity and basic config. Copy this template and fill it in:
 
 ```yaml
+postkit_version: "1.0.0"  # don't change manually — used by the update system
+
 name: [Your niche — e.g., "Fitness Coaching", "Web3", "SaaS Marketing"]
 
 identity:

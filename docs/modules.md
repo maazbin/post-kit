@@ -16,6 +16,7 @@ These live in `engine/core/` and power every post automatically. You don't enabl
 | `quality-gates.md` | Every post must pass all gates before output. |
 | `onboarding.md` | First-time guided setup flow. |
 | `brainstorm.md` | Collaborative improvement skill for any part of the pipeline. |
+| `update.md` | **Niche sync.** Opt-in reconciliation of your `my-niche/` files with the latest post-kit templates. Your customizations always win. |
 
 ---
 
