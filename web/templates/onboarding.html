@@ -1,0 +1,376 @@
+{% extends "base.html" %}
+{% block title %}Setup — post-kit{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center py-12 px-4">
+    <div class="max-w-2xl w-full">
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <span class="text-5xl mb-4 block">📦</span>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Welcome to post-kit</h1>
+            <p class="text-gray-600 text-lg">Let's set up your content pipeline. Answer 10 quick questions and you're ready to create.</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mb-8">
+            <div class="flex justify-between text-sm text-gray-500 mb-2">
+                <span>Step <span id="current-step">1</span> of 10</span>
+                <span id="progress-pct">10%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+                <div id="progress-bar" class="bg-brand-500 h-2 rounded-full transition-all duration-500" style="width: 10%"></div>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <form id="onboarding-form" method="POST" action="/onboarding">
+            <!-- Step 1: Niche -->
+            <div class="step" data-step="1">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">What's your niche?</h2>
+                    <p class="text-gray-500 mb-6">What do you do? What topic area do you create content about?</p>
+                    <input type="text" name="niche" placeholder="e.g., fitness, crypto, AI/tech, cooking, marketing..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-lg transition-shadow">
+                    <p class="mt-3 text-sm text-gray-400">Be specific — "strength training for busy dads" beats "fitness"</p>
+                </div>
+            </div>
+
+            <!-- Step 2: Voice -->
+            <div class="step hidden" data-step="2">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">How do you want to sound?</h2>
+                    <p class="text-gray-500 mb-6">Pick the closest style or describe your own.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4" id="voice-options">
+                        <div class="voice-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="Professional and authoritative">
+                            <span class="font-medium text-gray-900">🏢 Professional & Authoritative</span>
+                            <p class="text-sm text-gray-500 mt-1">Clear expertise, trusted tone</p>
+                        </div>
+                        <div class="voice-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="Casual and friendly">
+                            <span class="font-medium text-gray-900">😊 Casual & Friendly</span>
+                            <p class="text-sm text-gray-500 mt-1">Approachable, conversational</p>
+                        </div>
+                        <div class="voice-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="Savage and opinionated">
+                            <span class="font-medium text-gray-900">🔥 Savage & Opinionated</span>
+                            <p class="text-sm text-gray-500 mt-1">Unfiltered hot takes</p>
+                        </div>
+                        <div class="voice-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="Motivational but real">
+                            <span class="font-medium text-gray-900">💪 Motivational but Real</span>
+                            <p class="text-sm text-gray-500 mt-1">Inspiring without the fluff</p>
+                        </div>
+                        <div class="voice-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="Educational and clear">
+                            <span class="font-medium text-gray-900">📚 Educational & Clear</span>
+                            <p class="text-sm text-gray-500 mt-1">Teaching without being boring</p>
+                        </div>
+                        <div class="voice-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="custom">
+                            <span class="font-medium text-gray-900">✨ Custom</span>
+                            <p class="text-sm text-gray-500 mt-1">Describe your own style</p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="voice" id="voice-value" value="Casual and friendly">
+                    <div id="custom-voice-container" class="hidden mt-4">
+                        <textarea name="voice_custom" rows="3" placeholder="Describe your voice style..." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-shadow"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Platforms -->
+            <div class="step hidden" data-step="3">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">What platforms do you post on?</h2>
+                    <p class="text-gray-500 mb-6">Select all that apply.</p>
+                    <div class="space-y-3" id="platform-options">
+                        <div class="platform-card flex items-center gap-3 p-4 border-2 border-brand-500 bg-brand-50 rounded-xl cursor-pointer transition-colors" data-value="linkedin" data-selected="true">
+                            <span class="text-lg">💼</span>
+                            <span class="font-medium text-gray-900">LinkedIn</span>
+                            <span class="ml-auto text-brand-500 font-bold">✓</span>
+                        </div>
+                        <div class="platform-card flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="x" data-selected="false">
+                            <span class="text-lg">𝕏</span>
+                            <span class="font-medium text-gray-900">X (Twitter)</span>
+                            <span class="ml-auto text-brand-500 font-bold hidden">✓</span>
+                        </div>
+                        <div class="platform-card flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="youtube" data-selected="false">
+                            <span class="text-lg">▶️</span>
+                            <span class="font-medium text-gray-900">YouTube</span>
+                            <span class="ml-auto text-brand-500 font-bold hidden">✓</span>
+                        </div>
+                        <div class="platform-card flex items-center gap-3 p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="newsletter" data-selected="false">
+                            <span class="text-lg">📧</span>
+                            <span class="font-medium text-gray-900">Newsletter</span>
+                            <span class="ml-auto text-brand-500 font-bold hidden">✓</span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="platforms" id="platforms-hidden" value="linkedin">
+                </div>
+            </div>
+
+            <!-- Step 4: Content Pillars -->
+            <div class="step hidden" data-step="4">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">What do you post about?</h2>
+                    <p class="text-gray-500 mb-6">List your main topics. Add rough % if you know the split.</p>
+                    <textarea name="pillars" rows="5" placeholder="e.g.,&#10;Workout tips 40%&#10;Nutrition myths 30%&#10;Client wins 20%&#10;Personal life 10%" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-lg transition-shadow"></textarea>
+                    <p class="mt-3 text-sm text-gray-400">One topic per line. Percentages are optional but helpful.</p>
+                </div>
+            </div>
+
+            <!-- Step 5: Visuals -->
+            <div class="step hidden" data-step="5">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Do you use images or visuals?</h2>
+                    <p class="text-gray-500 mb-6">This enables the visual system module for image recommendations.</p>
+                    <input type="hidden" name="visuals" id="visuals-value" value="no">
+                    <div class="grid grid-cols-2 gap-4" id="visuals-options">
+                        <div class="choice-card p-6 text-center border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-target="visuals-value" data-value="yes">
+                            <span class="text-3xl block mb-2">🖼️</span>
+                            <span class="font-medium text-gray-900">Yes</span>
+                        </div>
+                        <div class="choice-card p-6 text-center border-2 border-brand-500 bg-brand-50 rounded-xl cursor-pointer transition-colors" data-target="visuals-value" data-value="no">
+                            <span class="text-3xl block mb-2">📝</span>
+                            <span class="font-medium text-gray-900">Text only</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6: Humor -->
+            <div class="step hidden" data-step="6">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Do you do memes, humor, or roasts?</h2>
+                    <p class="text-gray-500 mb-6">Enables the meme/humor pipeline for spicy content.</p>
+                    <input type="hidden" name="humor" id="humor-value" value="no">
+                    <div class="grid grid-cols-2 gap-4" id="humor-options">
+                        <div class="choice-card p-6 text-center border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-target="humor-value" data-value="yes">
+                            <span class="text-3xl block mb-2">😈</span>
+                            <span class="font-medium text-gray-900">Yes, bring the heat</span>
+                        </div>
+                        <div class="choice-card p-6 text-center border-2 border-brand-500 bg-brand-50 rounded-xl cursor-pointer transition-colors" data-target="humor-value" data-value="no">
+                            <span class="text-3xl block mb-2">🙅</span>
+                            <span class="font-medium text-gray-900">Not my style</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7: Content Style -->
+            <div class="step hidden" data-step="7">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">What type of content do you create?</h2>
+                    <p class="text-gray-500 mb-6">This determines whether we enable the news scout module.</p>
+                    <input type="hidden" name="content_style" id="content-style-value" value="mix">
+                    <div class="space-y-3" id="style-options">
+                        <div class="style-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="news-based">
+                            <span class="font-medium text-gray-900">📰 News-based</span>
+                            <p class="text-sm text-gray-500 mt-1">You react to what's happening in your space</p>
+                        </div>
+                        <div class="style-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="evergreen">
+                            <span class="font-medium text-gray-900">🌲 Evergreen</span>
+                            <p class="text-sm text-gray-500 mt-1">Timeless tips, advice, stories that always work</p>
+                        </div>
+                        <div class="style-card p-4 border-2 border-brand-500 bg-brand-50 rounded-xl cursor-pointer transition-colors" data-value="mix">
+                            <span class="font-medium text-gray-900">🔀 Mix of both</span>
+                            <p class="text-sm text-gray-500 mt-1">Some reactive, some timeless — best of both worlds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8: Audience Hangouts -->
+            <div class="step hidden" data-step="8">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">Where does your audience hang out?</h2>
+                    <p class="text-gray-500 mb-6">Subreddits, communities, forums — where do they spend time online?</p>
+                    <textarea name="audience_hangouts" rows="4" placeholder="e.g.,&#10;r/fitness, r/gym&#10;Bodybuilding.com forums&#10;AthleanX YouTube comments&#10;Twitter fitness community" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-lg transition-shadow"></textarea>
+                    <p class="mt-3 text-sm text-gray-400">Not sure? Just describe your niche and we'll figure it out.</p>
+                </div>
+            </div>
+
+            <!-- Step 9: Cadence -->
+            <div class="step hidden" data-step="9">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">How often do you want to post?</h2>
+                    <p class="text-gray-500 mb-6">Set your target frequency.</p>
+                    <input type="hidden" name="cadence" id="cadence-value" value="3-5 times a week">
+                    <div class="space-y-3" id="cadence-options">
+                        <div class="cadence-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="once a day">
+                            <span class="font-medium text-gray-900">Daily</span>
+                            <p class="text-sm text-gray-500">1 post per day</p>
+                        </div>
+                        <div class="cadence-card p-4 border-2 border-brand-500 bg-brand-50 rounded-xl cursor-pointer transition-colors" data-value="3-5 times a week">
+                            <span class="font-medium text-gray-900">3-5x per week</span>
+                            <p class="text-sm text-gray-500">Sweet spot for most creators</p>
+                        </div>
+                        <div class="cadence-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="1-2 times a week">
+                            <span class="font-medium text-gray-900">1-2x per week</span>
+                            <p class="text-sm text-gray-500">Quality over quantity</p>
+                        </div>
+                        <div class="cadence-card p-4 border-2 border-gray-200 rounded-xl cursor-pointer hover:border-gray-300 transition-colors" data-value="twice a day">
+                            <span class="font-medium text-gray-900">2x per day</span>
+                            <p class="text-sm text-gray-500">Maximum output mode</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 10: Timezone -->
+            <div class="step hidden" data-step="10">
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-2">What timezone are you in?</h2>
+                    <p class="text-gray-500 mb-6">Helps optimize posting times.</p>
+                    <input type="text" name="timezone" value="Asia/Karachi" placeholder="e.g., US/Eastern, Europe/London, Asia/Karachi" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brand-500 focus:border-brand-500 text-lg transition-shadow">
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <button type="button" class="tz-btn px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors" data-tz="US/Eastern">US/Eastern</button>
+                        <button type="button" class="tz-btn px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors" data-tz="US/Pacific">US/Pacific</button>
+                        <button type="button" class="tz-btn px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors" data-tz="Europe/London">Europe/London</button>
+                        <button type="button" class="tz-btn px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors" data-tz="Asia/Karachi">Asia/Karachi</button>
+                        <button type="button" class="tz-btn px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm text-gray-700 transition-colors" data-tz="Asia/Kolkata">Asia/Kolkata</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="flex justify-between mt-8">
+                <button type="button" id="btn-prev" class="hidden px-6 py-3 text-gray-600 font-medium rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors">
+                    ← Back
+                </button>
+                <div class="ml-auto">
+                    <button type="button" id="btn-next" class="px-8 py-3 bg-brand-500 text-white font-medium rounded-xl hover:bg-brand-600 transition-colors shadow-sm">
+                        Next →
+                    </button>
+                    <button type="submit" id="btn-submit" class="hidden px-8 py-3 bg-green-500 text-white font-medium rounded-xl hover:bg-green-600 transition-colors shadow-sm">
+                        🚀 Launch Pipeline
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    const steps = document.querySelectorAll('.step');
+    const progressBar = document.getElementById('progress-bar');
+    const currentStepEl = document.getElementById('current-step');
+    const progressPct = document.getElementById('progress-pct');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const btnSubmit = document.getElementById('btn-submit');
+    let current = 0;
+
+    // --- Step navigation ---
+    function showStep(idx) {
+        steps.forEach((s, i) => s.classList.toggle('hidden', i !== idx));
+        current = idx;
+        const pct = Math.round(((idx + 1) / steps.length) * 100);
+        progressBar.style.width = pct + '%';
+        currentStepEl.textContent = idx + 1;
+        progressPct.textContent = pct + '%';
+        btnPrev.classList.toggle('hidden', idx === 0);
+        btnNext.classList.toggle('hidden', idx === steps.length - 1);
+        btnSubmit.classList.toggle('hidden', idx !== steps.length - 1);
+    }
+
+    btnNext.addEventListener('click', () => {
+        if (current < steps.length - 1) showStep(current + 1);
+    });
+
+    btnPrev.addEventListener('click', () => {
+        if (current > 0) showStep(current - 1);
+    });
+
+    // --- Voice selection ---
+    document.querySelectorAll('.voice-card').forEach(card => {
+        card.addEventListener('click', () => {
+            // Deselect all
+            document.querySelectorAll('.voice-card').forEach(c => {
+                c.classList.remove('border-brand-500', 'bg-brand-50');
+                c.classList.add('border-gray-200');
+            });
+            // Select this one
+            card.classList.remove('border-gray-200');
+            card.classList.add('border-brand-500', 'bg-brand-50');
+            // Set value
+            document.getElementById('voice-value').value = card.dataset.value;
+            // Toggle custom textarea
+            document.getElementById('custom-voice-container').classList.toggle('hidden', card.dataset.value !== 'custom');
+        });
+    });
+
+    // --- Platform multi-select ---
+    document.querySelectorAll('.platform-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const isSelected = card.dataset.selected === 'true';
+            card.dataset.selected = isSelected ? 'false' : 'true';
+
+            if (isSelected) {
+                card.classList.remove('border-brand-500', 'bg-brand-50');
+                card.classList.add('border-gray-200');
+                card.querySelector('span:last-child').classList.add('hidden');
+            } else {
+                card.classList.remove('border-gray-200');
+                card.classList.add('border-brand-500', 'bg-brand-50');
+                card.querySelector('span:last-child').classList.remove('hidden');
+            }
+
+            // Update hidden field
+            const selected = Array.from(document.querySelectorAll('.platform-card[data-selected="true"]'))
+                .map(c => c.dataset.value);
+            document.getElementById('platforms-hidden').value = selected.join(',');
+        });
+    });
+
+    // --- Choice cards (visuals, humor) ---
+    document.querySelectorAll('.choice-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const target = card.dataset.target;
+            const container = card.parentElement;
+            // Deselect siblings
+            container.querySelectorAll('.choice-card').forEach(c => {
+                c.classList.remove('border-brand-500', 'bg-brand-50');
+                c.classList.add('border-gray-200');
+            });
+            // Select this
+            card.classList.remove('border-gray-200');
+            card.classList.add('border-brand-500', 'bg-brand-50');
+            document.getElementById(target).value = card.dataset.value;
+        });
+    });
+
+    // --- Style cards (content style) ---
+    document.querySelectorAll('.style-card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.style-card').forEach(c => {
+                c.classList.remove('border-brand-500', 'bg-brand-50');
+                c.classList.add('border-gray-200');
+            });
+            card.classList.remove('border-gray-200');
+            card.classList.add('border-brand-500', 'bg-brand-50');
+            document.getElementById('content-style-value').value = card.dataset.value;
+        });
+    });
+
+    // --- Cadence cards ---
+    document.querySelectorAll('.cadence-card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.cadence-card').forEach(c => {
+                c.classList.remove('border-brand-500', 'bg-brand-50');
+                c.classList.add('border-gray-200');
+            });
+            card.classList.remove('border-gray-200');
+            card.classList.add('border-brand-500', 'bg-brand-50');
+            document.getElementById('cadence-value').value = card.dataset.value;
+        });
+    });
+
+    // --- Timezone quick-fill buttons ---
+    document.querySelectorAll('.tz-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelector('input[name="timezone"]').value = btn.dataset.tz;
+        });
+    });
+
+    showStep(0);
+})();
+</script>
+{% endblock %}
