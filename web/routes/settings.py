@@ -11,6 +11,7 @@ router = APIRouter()
 
 AVAILABLE_MODULES = [
     {"id": "visual-system", "name": "Visual System", "desc": "Recommends image types for each post"},
+    {"id": "video-prompts", "name": "Video Prompts", "desc": "Veo3/Runway 30-sec video prompts layered on image prompts"},
     {"id": "memes", "name": "Memes & Humor", "desc": "Humor, roasts, meme formats"},
     {"id": "news-scout", "name": "News Scout", "desc": "Discovers trending topics"},
     {"id": "video-content", "name": "Video Content", "desc": "Short-form video specs and scripts"},

@@ -8,7 +8,7 @@ from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 
 from .services.db import init_db
-from .routes import dashboard, onboarding, posts, settings, api
+from .routes import dashboard, onboarding, posts, settings, api, how_it_works
 
 BASE_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = BASE_DIR.parent
@@ -29,6 +29,7 @@ app.include_router(onboarding.router)
 app.include_router(posts.router)
 app.include_router(settings.router)
 app.include_router(api.router)
+app.include_router(how_it_works.router)
 
 
 @app.get("/")

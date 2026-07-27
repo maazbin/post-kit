@@ -30,6 +30,9 @@
                         {% if post.image_prompt %}
                         <span class="px-2.5 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium">🖼️ image prompt</span>
                         {% endif %}
+                        {% if post.video_prompt %}
+                        <span class="px-2.5 py-1 bg-pink-50 text-pink-700 rounded-full text-xs font-medium">🎬 video prompt</span>
+                        {% endif %}
                         {% if post.references_used %}
                         <span class="px-2.5 py-1 bg-yellow-50 text-yellow-700 rounded-full text-xs font-medium">📎 references</span>
                         {% endif %}
